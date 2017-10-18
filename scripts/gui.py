@@ -60,21 +60,21 @@ class GUI(Tk):
 
         self.state = "prestart"
 
-        self.prestart_label_timer  = 2 * 60
-        self.white_label_1_timer   = 5 * 60
-        self.blue_label_1_timer    = 5 * 60
-        self.white_label_2_timer   = 3 * 60 + 20
-        self.blue_label_2_timer    = 2 * 60 + 20
-        self.white_label_3_timer   = 2 * 60 + 30
-        self.blue_label_3_timer    = 1 * 60 + 30
-        self.white_label_4_timer   = 2 * 60
-        self.blue_label_4_timer    = 1 * 60
-        self.white_label_5_timer   = 2 * 60
-        self.blue_label_5_timer    = 0 * 60 + 40
-        self.white_label_6_timer   = 1 * 60 + 30
-        self.blue_label_6_timer    = 0 * 60 + 30
-        self.white_label_7_timer   = 1 * 60 + 30
-        self.blue_label_7_timer    = 0 * 60 + 20
+        self.prestart_label_timer  = 5
+        self.white_label_1_timer   = 5
+        self.blue_label_1_timer    = 5
+        self.white_label_2_timer   = 5
+        self.blue_label_2_timer    = 5
+        self.white_label_3_timer   = 5
+        self.blue_label_3_timer    = 5
+        self.white_label_4_timer   = 5
+        self.blue_label_4_timer    = 5
+        self.white_label_5_timer   = 5
+        self.blue_label_5_timer    = 5
+        self.white_label_6_timer   = 5
+        self.blue_label_6_timer    = 5
+        self.white_label_7_timer   = 5
+        self.blue_label_7_timer    = 5
 
         self.white_stage1_alarm_offset = None
         self.white_stage2_alarm_offset = None
@@ -126,25 +126,26 @@ class GUI(Tk):
         if self.timer_variable == 3:
             self.radio_3.configure(fg="green", selectcolor="black", bg="black")
 
-        self.apply_timer(self.white_entry_1, self.white_stage1_alarm_offset)
-        self.apply_timer(self.white_entry_2, self.white_stage2_alarm_offset)
-        self.apply_timer(self.white_entry_3, self.white_stage3_alarm_offset)
-        self.apply_timer(self.white_entry_4, self.white_stage4_alarm_offset)
-        self.apply_timer(self.white_entry_5, self.white_stage5_alarm_offset)
-        self.apply_timer(self.white_entry_6, self.white_stage6_alarm_offset)
-        self.apply_timer(self.white_entry_7, self.white_stage7_alarm_offset)
-        self.apply_timer(self.blue_entry_1, self.blue_stage1_alarm_offset)
-        self.apply_timer(self.blue_entry_2, self.blue_stage2_alarm_offset)
-        self.apply_timer(self.blue_entry_3, self.blue_stage3_alarm_offset)
-        self.apply_timer(self.blue_entry_4, self.blue_stage4_alarm_offset)
-        self.apply_timer(self.blue_entry_5, self.blue_stage5_alarm_offset)
-        self.apply_timer(self.blue_entry_6, self.blue_stage6_alarm_offset)
-        self.apply_timer(self.blue_entry_7, self.blue_stage7_alarm_offset)
+        self.white_stage1_alarm_offset = self.apply_timer(self.white_entry_1)
+        self.white_stage2_alarm_offset = self.apply_timer(self.white_entry_2)
+        self.white_stage3_alarm_offset = self.apply_timer(self.white_entry_3)
+        self.white_stage4_alarm_offset = self.apply_timer(self.white_entry_4)
+        self.white_stage5_alarm_offset = self.apply_timer(self.white_entry_5)
+        self.white_stage6_al5arm_offset = self.apply_timer(self.white_entry_6)
+        self.white_stage7_alarm_offset = self.apply_timer(self.white_entry_7)
 
-    def apply_timer(self, entry, alarm_offset):
-        if not entry.get() == "":
-            alarm_offset = int(entry.get())
+        self.blue_stage1_alarm_offset = self.apply_timer(self.blue_entry_1)
+        self.blue_stage2_alarm_offset = self.apply_timer(self.blue_entry_2)
+        self.blue_stage3_alarm_offset = self.apply_timer(self.blue_entry_3)
+        self.blue_stage4_alarm_offset = self.apply_timer(self.blue_entry_4)
+        self.blue_stage5_alarm_offset = self.apply_timer(self.blue_entry_5)
+        self.blue_stage6_alarm_offset = self.apply_timer(self.blue_entry_6)
+        self.blue_stage7_alarm_offset = self.apply_timer(self.blue_entry_7)
+
+    def apply_timer(self, entry):
         entry.configure(fg="green", bg="black")
+        if not entry.get() == "":
+            return int(entry.get())
 
     def play_alarm_sound(self):
         if self.soundfile == 1:
