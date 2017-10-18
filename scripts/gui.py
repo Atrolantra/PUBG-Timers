@@ -125,61 +125,26 @@ class GUI(Tk):
                 self.global_entry.configure(fg="green", bg="black")
         if self.timer_variable == 3:
             self.radio_3.configure(fg="green", selectcolor="black", bg="black")
-        if not self.white_entry_1.get() == "":
-            self.white_stage1_alarm_offset = int(self.white_entry_1.get())
-            self.white_entry_1.configure(fg="green", bg="black")
 
-        if not self.white_entry_2.get() == "":
-            self.white_stage2_alarm_offset = int(self.white_entry_2.get())
-            self.white_entry_2.configure(fg="green", bg="black")
+        self.apply_timer(self.white_entry_1, self.white_stage1_alarm_offset)
+        self.apply_timer(self.white_entry_2, self.white_stage2_alarm_offset)
+        self.apply_timer(self.white_entry_3, self.white_stage3_alarm_offset)
+        self.apply_timer(self.white_entry_4, self.white_stage4_alarm_offset)
+        self.apply_timer(self.white_entry_5, self.white_stage5_alarm_offset)
+        self.apply_timer(self.white_entry_6, self.white_stage6_alarm_offset)
+        self.apply_timer(self.white_entry_7, self.white_stage7_alarm_offset)
+        self.apply_timer(self.blue_entry_1, self.blue_stage1_alarm_offset)
+        self.apply_timer(self.blue_entry_2, self.blue_stage2_alarm_offset)
+        self.apply_timer(self.blue_entry_3, self.blue_stage3_alarm_offset)
+        self.apply_timer(self.blue_entry_4, self.blue_stage4_alarm_offset)
+        self.apply_timer(self.blue_entry_5, self.blue_stage5_alarm_offset)
+        self.apply_timer(self.blue_entry_6, self.blue_stage6_alarm_offset)
+        self.apply_timer(self.blue_entry_7, self.blue_stage7_alarm_offset)
 
-        if not self.white_entry_3.get() == "":
-            self.white_stage3_alarm_offset = int(self.white_entry_3.get())
-            self.white_entry_3.configure(fg="green", bg="black")
-
-        if not self.white_entry_4.get() == "":
-            self.white_stage4_alarm_offset = int(self.white_entry_4.get())
-            self.white_entry_4.configure(fg="green", bg="black")
-
-        if not self.white_entry_5.get() == "":
-            self.white_stage5_alarm_offset = int(self.white_entry_5.get())
-            self.white_entry_5.configure(fg="green", bg="black")
-            
-        if not self.white_entry_6.get() == "":
-            self.white_stage6_alarm_offset = int(self.white_entry_6.get())
-            self.white_entry_6.configure(fg="green", bg="black")
-            
-        if not self.white_entry_7.get() == "":
-            self.white_stage7_alarm_offset = int(self.white_entry_7.get())
-            self.white_entry_7.configure(fg="green", bg="black")
-            
-        if not self.blue_entry_1.get() == "":
-            self.blue_stage1_alarm_offset = int(self.blue_entry_1.get())
-            self.blue_entry_1.configure(fg="green", bg="black")
-            
-        if not self.blue_entry_2.get() == "":
-            self.blue_stage2_alarm_offset = int(self.blue_entry_2.get())
-            self.blue_entry_2.configure(fg="green", bg="black")
-            
-        if not self.blue_entry_3.get() == "":
-            self.blue_stage3_alarm_offset = int(self.blue_entry_3.get())
-            self.blue_entry_3.configure(fg="green", bg="black")
-            
-        if not self.blue_entry_4.get() == "":
-            self.blue_stage4_alarm_offset = int(self.blue_entry_4.get())
-            self.blue_entry_4.configure(fg="green", bg="black")
-            
-        if not self.blue_entry_5.get() == "":
-            self.blue_stage5_alarm_offset = int(self.blue_entry_5.get())
-            self.blue_entry_5.configure(fg="green", bg="black")
-            
-        if not self.blue_entry_6.get() == "":
-            self.blue_stage6_alarm_offset = int(self.blue_entry_6.get())
-            self.blue_entry_6.configure(fg="green", bg="black")
-            
-        if not self.blue_entry_7.get() == "":
-            self.blue_stage7_alarm_offset = int(self.blue_entry_7.get())
-            self.blue_entry_7.configure(fg="green", bg="black")
+    def apply_timer(self, entry, alarm_offset):
+        if not entry.get() == "":
+            alarm_offset = int(entry.get())
+        entry.configure(fg="green", bg="black")
 
     def play_alarm_sound(self):
         if self.soundfile == 1:
